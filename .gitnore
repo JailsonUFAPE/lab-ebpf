@@ -1,0 +1,30 @@
+# Sistema Linux
+.cache/
+.local/
+.config/
+snap/
+
+# GNOME / Nautilus
+.local/share/
+.local/share/gnome-shell/
+.local/share/nautilus/
+
+# Snap
+snap/snapd-desktop-integration/
+
+# Logs
+*.log
+
+# Python
+__pycache__/
+*.pyc
+.env
+.venv
+
+# Docker volumes
+**/data/
+**/volumes/
+
+# eBPF temporários
+*.bt.out
+*.tmp

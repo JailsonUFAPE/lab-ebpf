@@ -1,0 +1,13 @@
+#!/usr/bin/env bpftrace
+
+tracepoint:syscalls:sys_enter_sendto
+{
+  @start[tid] = nsecs;
+}
+
+tracepoint:syscalls:sys_exit_sendto
+/@start[tid]/
+{
+  @latency = hist((nsecs - @start[tid]) / 1000);
+  delete(@start[tid]);
+}
